@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Presentation.Data;
+using Presentation.Data.Entities;
 using Presentation.Data.Repositories;
 using Presentation.Service;
 
@@ -10,8 +10,8 @@ builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
-builder.Services.AddScoped<IBoilerplateRespository, BoilerplateRespository>();
+builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
+builder.Services.AddScoped<IBoilerplateRepository, BoilerplateRepository>();     
 builder.Services.AddScoped<IBoilerplateService, BoilerplateService>();
 
 var app = builder.Build();

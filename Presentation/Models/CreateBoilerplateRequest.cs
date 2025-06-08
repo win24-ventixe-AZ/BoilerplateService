@@ -4,4 +4,6 @@ public class CreateBoilerplateRequest
 {
     public string? BoilerplateType { get; set; }
     public string? BoilerplateContent { get; set; }
+
+    public DateTime? CreatedAt { get; set; }
 }
